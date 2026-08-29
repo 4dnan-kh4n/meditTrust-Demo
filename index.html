@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="mediTrust hackathon prototype" />
+    <title>mediTrust — Hackathon Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="mediTrust home"><img src="assets/meditrust-logo.png" alt="mediTrust" /></a>
+      <nav><a href="#discover">Discover</a><a href="#how-it-works">How it works</a></nav>
+      <span class="prototype-label">NEXHACK 2.0 PROTOTYPE</span>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">DOCTOR DISCOVERY, SIMPLIFIED</p>
+          <h1>Find the right doctor, even when <em>the city is new.</em></h1>
+          <p class="lead">A focused prototype for comparing clear doctor information, locations, schedules, and appointment options.</p>
+          <a class="primary-button" href="#discover">Explore doctors <span>→</span></a>
+        </div>
+        <div class="hero-art"><img src="assets/hero-medical-wayfinder.png" alt="3D medical location marker" /></div>
+      </section>
+
+      <section class="steps" id="how-it-works">
+        <p class="eyebrow">A CALMER STARTING POINT</p>
+        <h2>Three simple steps to begin.</h2>
+        <div class="step-grid">
+          <article><span>01</span><h3>Choose a city</h3><p>Start with the location you know.</p></article>
+          <article><span>02</span><h3>Explore doctors</h3><p>Compare practical profile details.</p></article>
+          <article><span>03</span><h3>Take the next step</h3><p>Review schedules and contact options.</p></article>
+        </div>
+      </section>
+
+      <section class="discover" id="discover">
+        <div class="section-heading">
+          <div><p class="eyebrow">PROTOTYPE EXPERIENCE</p><h2>Start with what you know.</h2></div>
+          <button class="text-button" id="guidanceButton" type="button">I’m not sure which speciality →</button>
+        </div>
+        <form class="search-panel" id="searchForm">
+          <label>City<select aria-label="City"><option>Bhopal, Madhya Pradesh</option><option>Indore, Madhya Pradesh</option><option>Pune, Maharashtra</option></select></label>
+          <label>Speciality<select id="speciality" aria-label="Speciality"><option>Dermatology</option><option>Cardiology</option><option>General Medicine</option></select></label>
+          <button class="primary-button" type="submit">Show doctors <span>→</span></button>
+        </form>
+        <p class="helper-text" id="helperText">Choose a city and speciality to view the prototype results.</p>
+        <div class="results" id="results" aria-live="polite"></div>
+      </section>
+
+      <section class="trust">
+        <div class="trust-art"><img src="assets/verification-3d.png" alt="Profile verification illustration" /></div>
+        <div><p class="eyebrow">CLEAR, PRACTICAL CONTEXT</p><h2>Information people can actually use.</h2><p>Every profile in this prototype makes the essentials easy to scan: speciality, experience, practice location, consultation schedule, and appointment options.</p></div>
+      </section>
+    </main>
+
+    <footer><img src="assets/meditrust-logo.png" alt="mediTrust" /><p>Hackathon prototype</p></footer>
+
+    <dialog id="profileDialog">
+      <button class="close-button" id="closeDialog" type="button" aria-label="Close profile">×</button>
+      <div id="profileContent"></div>
+    </dialog>
+    <dialog id="guidanceDialog">
+      <button class="close-button" id="closeGuidance" type="button" aria-label="Close guidance">×</button>
+      <p class="eyebrow">GUIDANCE PREVIEW</p>
+      <h2>Not sure where to begin?</h2>
+      <p>For a persistent skin rash, Dermatology can be a useful category to explore. This prototype gives navigation guidance only—it does not diagnose conditions or recommend treatment.</p>
+      <button class="primary-button" id="chooseDermatology" type="button">Explore dermatology <span>→</span></button>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
